@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Rick &amp; Morty</string>
+
+    <string name="screen_title_characters">Characters</string>
+    <string name="screen_title_locations">Locations</string>
+    <string name="screen_title_episodes">Episodes</string>
+</resources>
