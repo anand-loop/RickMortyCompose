@@ -4,13 +4,19 @@ import com.anandj.rickmorty.model.Character
 import com.anandj.rickmorty.model.Episode
 import com.anandj.rickmorty.model.Location
 import com.anandj.rickmorty.model.PagedResult
+import com.anandj.rickmorty.model.StatusAdapter
+import com.squareup.moshi.Moshi
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 class RickMortyClient {
+    private val moshi = Moshi.Builder()
+        .add(StatusAdapter())
+        .build()
+
     private val api = Retrofit.Builder()
         .baseUrl("https://rickandmortyapi.com/api/")
-        .addConverterFactory(MoshiConverterFactory.create())
+        .addConverterFactory(MoshiConverterFactory.create(moshi))
         .build()
         .create(RickMortyApi::class.java)
 

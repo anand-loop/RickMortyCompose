@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
     private val navItems = listOf(
         NavigationItem(title = R.string.screen_title_characters, icon = R.drawable.ic_person, "characters_screen"),
         NavigationItem(title = R.string.screen_title_locations, icon = R.drawable.ic_location, "locations_screen"),
-        NavigationItem(title = R.string.screen_title_episodes, icon = R.drawable.ic_episode, "episodes_screen"),
+        NavigationItem(title = R.string.screen_title_episodes, icon = R.drawable.ic_episode, "episodes_screen")
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {

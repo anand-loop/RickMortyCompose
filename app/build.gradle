@@ -6,9 +6,11 @@ plugins {
 
 spotless {
     java {
+        target '**/*.java'
         googleJavaFormat()
     }
     kotlin {
+        target '**/*.kt'
         ktlint()
     }
 }
@@ -70,6 +72,7 @@ dependencies {
     implementation "androidx.compose.material:material:$compose_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
     implementation 'androidx.activity:activity-compose:1.3.1'
+    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
 

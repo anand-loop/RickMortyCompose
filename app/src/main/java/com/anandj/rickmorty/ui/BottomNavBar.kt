@@ -25,7 +25,7 @@ fun BottomNavBar(items: List<NavigationItem>, modifier: Modifier = Modifier, nav
                 selected = currentRoute == item.route,
                 onClick = {
                     navController.navigate(item.route)
-                },
+                }
             )
         }
     }
