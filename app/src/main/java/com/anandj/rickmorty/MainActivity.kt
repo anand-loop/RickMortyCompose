@@ -5,11 +5,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -30,7 +30,7 @@ import com.anandj.rickmorty.ui.CharacterView
 import com.anandj.rickmorty.ui.EpisodeView
 import com.anandj.rickmorty.ui.LocationView
 import com.anandj.rickmorty.ui.NavigationItem
-import com.anandj.rickmorty.ui.theme.RickMortyTheme
+import com.anandj.rickmorty.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
     private val navItems = listOf(
@@ -39,12 +39,13 @@ class MainActivity : ComponentActivity() {
         NavigationItem(title = R.string.screen_title_episodes, icon = R.drawable.ic_episode, "episodes_screen")
     )
 
+    @ExperimentalMaterial3Api
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            RickMortyTheme {
+            AppTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
+                Surface(modifier = Modifier.fillMaxSize()) {
                     val navController = rememberNavController()
                     RickMortyApp(navController, navItems)
                 }
@@ -53,6 +54,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@ExperimentalMaterial3Api
 @Composable
 fun RickMortyApp(navController: NavHostController, navItems: List<NavigationItem>) {
     Scaffold(

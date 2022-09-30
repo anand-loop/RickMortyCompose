@@ -2,28 +2,31 @@ package com.anandj.rickmorty.ui
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.Card
-import androidx.compose.material.Icon
-import androidx.compose.material.Text
+import androidx.compose.material3.Card
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.constraintlayout.compose.Dimension
 import coil.compose.AsyncImage
 import com.anandj.rickmorty.R
 import com.anandj.rickmorty.model.Character
 import com.anandj.rickmorty.model.Status
+import com.anandj.rickmorty.ui.theme.Dimen
 
 @Composable
 fun CharacterView(character: Character, modifier: Modifier = Modifier) {
     Card(
-        elevation = 10.dp,
-        modifier = modifier
-            .fillMaxWidth()
+        modifier = modifier.fillMaxWidth()
     ) {
-        ConstraintLayout() {
+        ConstraintLayout(
+            modifier = Modifier.fillMaxWidth()
+        ) {
             val (image, name, species, status) = createRefs()
 
             AsyncImage(
@@ -31,7 +34,7 @@ fun CharacterView(character: Character, modifier: Modifier = Modifier) {
                 placeholder = painterResource(R.drawable.image_placeholder),
                 contentDescription = character.name,
                 modifier = Modifier
-                    .size(128.dp)
+                    .size(Dimen.ProfileImage)
                     .constrainAs(image) {
                         top.linkTo(parent.top)
                     }
@@ -39,17 +42,23 @@ fun CharacterView(character: Character, modifier: Modifier = Modifier) {
 
             Text(
                 text = character.name,
+                style = MaterialTheme.typography.titleMedium,
                 modifier = Modifier.constrainAs(name) {
-                    start.linkTo(image.end, margin = 10.dp)
-                    top.linkTo(parent.top, margin = 10.dp)
+                    start.linkTo(image.end, margin = Dimen.ContentPadding)
+                    top.linkTo(parent.top, margin = Dimen.ContentPadding)
+                    end.linkTo(parent.end, margin = Dimen.ContentPadding)
+                    width = Dimension.fillToConstraints
                 }
             )
 
             Text(
                 text = character.species,
+                style = MaterialTheme.typography.bodyMedium,
                 modifier = Modifier.constrainAs(species) {
-                    start.linkTo(image.end, margin = 10.dp)
+                    start.linkTo(image.end, margin = Dimen.ContentPadding)
                     top.linkTo(name.bottom)
+                    end.linkTo(parent.end, margin = Dimen.ContentPadding)
+                    width = Dimension.fillToConstraints
                 }
             )
 
@@ -61,9 +70,10 @@ fun CharacterView(character: Character, modifier: Modifier = Modifier) {
                 Icon(
                     painter = painterResource(id = it),
                     modifier = Modifier.constrainAs(status) {
-                        bottom.linkTo(parent.bottom, margin = 10.dp)
-                        end.linkTo(parent.end, margin = 10.dp)
+                        bottom.linkTo(parent.bottom, margin = Dimen.ContentPadding)
+                        end.linkTo(parent.end, margin = Dimen.ContentPadding)
                     },
+                    tint = Color.Red,
                     contentDescription = null
                 )
             }
@@ -75,6 +85,10 @@ fun CharacterView(character: Character, modifier: Modifier = Modifier) {
 @Composable
 fun CharacterViewPreview() {
     CharacterView(
-        character = Character(name = "First Last")
+        character = Character(
+            name = "ReallyLongFirstName ReallyLongLastName",
+            status = Status.UNKNOWN,
+            species = "Human"
+        )
     )
 }

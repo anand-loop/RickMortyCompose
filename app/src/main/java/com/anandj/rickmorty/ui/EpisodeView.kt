@@ -3,26 +3,27 @@ package com.anandj.rickmorty.ui
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Card
-import androidx.compose.material.Text
+import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.anandj.rickmorty.model.Episode
 import com.anandj.rickmorty.model.Location
+import com.anandj.rickmorty.ui.theme.Dimen
 
 @Composable
 fun EpisodeView(episode: Episode, modifier: Modifier = Modifier) {
-    Card(elevation = 10.dp) {
+    Card {
         Column(
             modifier = modifier
                 .fillMaxWidth()
-                .padding(16.dp)
+                .padding(Dimen.ContentPadding)
         ) {
-            Text(text = episode.name)
-            Text(text = episode.airDate)
-            Text(text = episode.episode)
+            Text(text = episode.name, style = MaterialTheme.typography.titleMedium)
+            Text(text = episode.airDate, style = MaterialTheme.typography.bodyMedium)
+            Text(text = episode.episode, style = MaterialTheme.typography.bodyMedium)
         }
     }
 }

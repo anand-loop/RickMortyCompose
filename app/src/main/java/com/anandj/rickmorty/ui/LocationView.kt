@@ -3,25 +3,26 @@ package com.anandj.rickmorty.ui
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Card
-import androidx.compose.material.Text
+import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.anandj.rickmorty.model.Location
+import com.anandj.rickmorty.ui.theme.Dimen
 
 @Composable
 fun LocationView(location: Location, modifier: Modifier = Modifier) {
-    Card(elevation = 10.dp) {
+    Card {
         Column(
             modifier = modifier
                 .fillMaxWidth()
-                .padding(16.dp)
+                .padding(Dimen.ContentPadding)
         ) {
-            Text(text = location.name)
-            Text(text = location.type)
-            Text(text = location.dimension)
+            Text(text = location.name, style = MaterialTheme.typography.titleMedium)
+            Text(text = location.type, style = MaterialTheme.typography.bodyMedium)
+            Text(text = location.dimension, style = MaterialTheme.typography.bodyMedium)
         }
     }
 }
