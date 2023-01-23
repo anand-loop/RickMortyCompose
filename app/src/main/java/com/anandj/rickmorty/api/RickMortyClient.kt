@@ -10,6 +10,15 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 class RickMortyClient {
+
+    companion object {
+        private val INSTANCE = RickMortyClient()
+
+        fun getInstance() = INSTANCE
+    }
+
+    private constructor()
+
     private val moshi = Moshi.Builder()
         .add(StatusAdapter())
         .build()

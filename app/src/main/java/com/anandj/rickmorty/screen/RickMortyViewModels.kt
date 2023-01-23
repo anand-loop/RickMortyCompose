@@ -7,7 +7,7 @@ import com.anandj.rickmorty.model.Episode
 import com.anandj.rickmorty.model.Location
 import com.anandj.rickmorty.model.PagedResult
 
-private val client: RickMortyClient = RickMortyClient()
+private val client: RickMortyClient = RickMortyClient.getInstance()
 
 class CharactersViewModel : ListViewModel<Character>() {
     override suspend fun fetchData(): Result<PagedResult<Character>> {
