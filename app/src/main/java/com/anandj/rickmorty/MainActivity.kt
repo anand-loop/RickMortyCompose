@@ -18,6 +18,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.airbnb.android.showkase.models.Showkase
 import com.anandj.rickmorty.model.Character
 import com.anandj.rickmorty.model.Episode
 import com.anandj.rickmorty.model.Location
@@ -36,7 +37,7 @@ class MainActivity : ComponentActivity() {
     private val navItems = listOf(
         NavigationItem(title = R.string.screen_title_characters, icon = R.drawable.ic_person, "characters_screen"),
         NavigationItem(title = R.string.screen_title_locations, icon = R.drawable.ic_location, "locations_screen"),
-        NavigationItem(title = R.string.screen_title_episodes, icon = R.drawable.ic_episode, "episodes_screen")
+        NavigationItem(title = R.string.screen_title_episodes, icon = R.drawable.ic_episode, "episodes_screen"),
     )
 
     @ExperimentalMaterial3Api
@@ -51,6 +52,7 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+        //startActivity(Showkase.getBrowserIntent(this))
     }
 }
 
@@ -63,12 +65,12 @@ fun RickMortyApp(navController: NavHostController, navItems: List<NavigationItem
         },
         bottomBar = {
             BottomNavBar(items = navItems, navController = navController)
-        }
+        },
     ) { padding ->
         NavHost(
             navController = navController,
             startDestination = "characters_screen",
-            modifier = Modifier.padding(padding)
+            modifier = Modifier.padding(padding),
         ) {
             composable("characters_screen") {
                 val viewModel: CharactersViewModel = viewModel()

@@ -6,9 +6,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-abstract class BaseViewModel<StateT, in ActionT>(intialState: StateT) : ViewModel() {
+abstract class BaseViewModel<StateT, in ActionT>(initialState: StateT) : ViewModel() {
 
-    private val _state = MutableStateFlow(intialState)
+    private val _state = MutableStateFlow(initialState)
     val state: StateFlow<StateT> = _state
 
     protected fun setState(state: StateT) {

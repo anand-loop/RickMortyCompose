@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id "com.diffplug.spotless" version "6.11.0"
+    id 'com.google.devtools.ksp'
 }
 
 spotless {
@@ -16,7 +17,7 @@ spotless {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.anandj.rickmorty"
@@ -89,6 +90,9 @@ dependencies {
 
     // Other
     implementation("io.coil-kt:coil-compose:2.0.0-rc01")
+
+    implementation "com.airbnb.android:showkase:1.0.0-beta18"
+    ksp "com.airbnb.android:showkase-processor:1.0.0-beta18"
 
     // Testing
     testImplementation 'junit:junit:4.13.2'

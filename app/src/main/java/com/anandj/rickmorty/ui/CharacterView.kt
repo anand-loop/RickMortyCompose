@@ -22,10 +22,10 @@ import com.anandj.rickmorty.ui.theme.Dimen
 @Composable
 fun CharacterView(character: Character, modifier: Modifier = Modifier) {
     Card(
-        modifier = modifier.fillMaxWidth()
+        modifier = modifier.fillMaxWidth(),
     ) {
         ConstraintLayout(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
         ) {
             val (image, name, species, status) = createRefs()
 
@@ -37,7 +37,7 @@ fun CharacterView(character: Character, modifier: Modifier = Modifier) {
                     .size(Dimen.ProfileImage)
                     .constrainAs(image) {
                         top.linkTo(parent.top)
-                    }
+                    },
             )
 
             Text(
@@ -48,7 +48,7 @@ fun CharacterView(character: Character, modifier: Modifier = Modifier) {
                     top.linkTo(parent.top, margin = Dimen.ContentPadding)
                     end.linkTo(parent.end, margin = Dimen.ContentPadding)
                     width = Dimension.fillToConstraints
-                }
+                },
             )
 
             Text(
@@ -59,7 +59,7 @@ fun CharacterView(character: Character, modifier: Modifier = Modifier) {
                     top.linkTo(name.bottom)
                     end.linkTo(parent.end, margin = Dimen.ContentPadding)
                     width = Dimension.fillToConstraints
-                }
+                },
             )
 
             when (character.status) {
@@ -74,7 +74,7 @@ fun CharacterView(character: Character, modifier: Modifier = Modifier) {
                         end.linkTo(parent.end, margin = Dimen.ContentPadding)
                     },
                     tint = Color.Red,
-                    contentDescription = null
+                    contentDescription = null,
                 )
             }
         }
@@ -88,7 +88,8 @@ fun CharacterViewPreview() {
         character = Character(
             name = "ReallyLongFirstName ReallyLongLastName",
             status = Status.UNKNOWN,
-            species = "Human"
-        )
+            species = "Human",
+            image = "https://rickandmortyapi.com/api/character/avatar/361.jpeg",
+        ),
     )
 }
