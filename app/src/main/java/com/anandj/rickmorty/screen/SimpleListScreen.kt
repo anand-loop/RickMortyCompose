@@ -23,13 +23,13 @@ import com.anandj.rickmorty.ui.CharacterView
 fun <T> SimpleStatefulList(
     viewModel: ListViewModel<*>,
     modifier: Modifier = Modifier,
-    itemContent: @Composable (T) -> Unit,
+    itemContent: @Composable (T) -> Unit
 ) {
     val state = viewModel.state.collectAsState()
     Box(
         modifier = modifier
             .fillMaxSize(),
-        contentAlignment = Alignment.Center,
+        contentAlignment = Alignment.Center
     ) {
         when (val viewState = state.value) {
             is ListViewState.Loaded<*> -> {
@@ -53,12 +53,12 @@ fun <T> SimpleStatefulList(
 inline fun <reified T> SimpleList(
     data: List<T>,
     modifier: Modifier = Modifier,
-    crossinline itemContent: @Composable (T) -> Unit,
+    crossinline itemContent: @Composable (T) -> Unit
 ) {
     LazyColumn(
         modifier = modifier,
         contentPadding = PaddingValues(16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         items(data) { item ->
             when (item) {
@@ -79,7 +79,7 @@ fun SimpleListPreview() {
         Character(name = "Yolo Solo"),
         Character(name = "Mr. Test"),
         Character(name = "Bruh McBrah"),
-        Character(name = "Mrs. Test"),
+        Character(name = "Mrs. Test")
     )
 
     SimpleList(previewCharacters, Modifier) {

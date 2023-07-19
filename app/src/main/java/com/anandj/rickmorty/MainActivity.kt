@@ -40,7 +40,7 @@ class MainActivity : ComponentActivity() {
     private val navItems = listOf(
         NavigationItem(title = R.string.screen_title_characters, icon = R.drawable.ic_person, "characters_screen"),
         NavigationItem(title = R.string.screen_title_locations, icon = R.drawable.ic_location, "locations_screen"),
-        NavigationItem(title = R.string.screen_title_episodes, icon = R.drawable.ic_episode, "episodes_screen"),
+        NavigationItem(title = R.string.screen_title_episodes, icon = R.drawable.ic_episode, "episodes_screen")
     )
 
     @ExperimentalMaterial3Api
@@ -73,12 +73,12 @@ fun RickMortyApp(navController: NavHostController, navItems: List<NavigationItem
                 },
                 bottomBar = {
                     BottomNavBar(items = navItems, navController = navController)
-                },
+                }
             ) { padding ->
                 NavHost(
                     navController = navController,
                     startDestination = "characters_screen",
-                    modifier = Modifier.padding(padding),
+                    modifier = Modifier.padding(padding)
                 ) {
                     composable("characters_screen") {
                         val viewModel: CharactersViewModel = viewModel()
@@ -100,6 +100,6 @@ fun RickMortyApp(navController: NavHostController, navItems: List<NavigationItem
                     }
                 }
             }
-        },
+        }
     )
 }

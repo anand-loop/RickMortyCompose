@@ -20,7 +20,7 @@ import com.anandj.rickmorty.getBrowserIntent
 @Composable
 fun DebugDrawer() {
     val items = listOf(
-        "Preview UI Elements (Showkase)",
+        "Preview UI Elements (Showkase)"
     )
 
     val context = LocalContext.current
@@ -34,7 +34,7 @@ fun DebugDrawer() {
                 onClick = {
                     context.findActivity().startActivity(Showkase.getBrowserIntent(context))
                 },
-                modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding),
+                modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding)
             )
         }
     }

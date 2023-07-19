@@ -9,7 +9,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.airbnb.android.showkase.annotation.ShowkaseComposable
 import com.anandj.rickmorty.model.Location
 import com.anandj.rickmorty.ui.theme.Dimen
 
@@ -19,7 +18,7 @@ fun LocationView(location: Location, modifier: Modifier = Modifier) {
         Column(
             modifier = modifier
                 .fillMaxWidth()
-                .padding(Dimen.ContentPadding),
+                .padding(Dimen.ContentPadding)
         ) {
             Text(text = location.name, style = MaterialTheme.typography.titleMedium)
             Text(text = location.type, style = MaterialTheme.typography.bodyMedium)
@@ -32,6 +31,6 @@ fun LocationView(location: Location, modifier: Modifier = Modifier) {
 @Composable
 fun LocationViewPreview() {
     LocationView(
-        location = Location(name = "Earth", type = "Planet", dimension = "C-137"),
+        location = Location(name = "Earth", type = "Planet", dimension = "C-137")
     )
 }
