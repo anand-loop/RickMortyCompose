@@ -16,23 +16,15 @@ import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.anandj.rickmorty.model.Character
-import com.anandj.rickmorty.model.Episode
-import com.anandj.rickmorty.model.Location
-import com.anandj.rickmorty.screen.CharactersViewModel
-import com.anandj.rickmorty.screen.EpisodesViewModel
-import com.anandj.rickmorty.screen.LocationsViewModel
-import com.anandj.rickmorty.screen.SimpleStatefulList
+import com.anandj.rickmorty.screen.CharactersScreen
+import com.anandj.rickmorty.screen.EpisodesScreen
+import com.anandj.rickmorty.screen.LocationsScreen
 import com.anandj.rickmorty.ui.BottomNavBar
-import com.anandj.rickmorty.ui.CharacterView
 import com.anandj.rickmorty.ui.DebugDrawer
-import com.anandj.rickmorty.ui.EpisodeView
-import com.anandj.rickmorty.ui.LocationView
 import com.anandj.rickmorty.ui.NavigationItem
 import com.anandj.rickmorty.ui.theme.AppTheme
 
@@ -80,24 +72,9 @@ fun RickMortyApp(navController: NavHostController, navItems: List<NavigationItem
                     startDestination = "characters_screen",
                     modifier = Modifier.padding(padding)
                 ) {
-                    composable("characters_screen") {
-                        val viewModel: CharactersViewModel = viewModel()
-                        SimpleStatefulList<Character>(viewModel) {
-                            CharacterView(character = it)
-                        }
-                    }
-                    composable("locations_screen") {
-                        val viewModel: LocationsViewModel = viewModel()
-                        SimpleStatefulList<Location>(viewModel) {
-                            LocationView(location = it)
-                        }
-                    }
-                    composable("episodes_screen") {
-                        val viewModel: EpisodesViewModel = viewModel()
-                        SimpleStatefulList<Episode>(viewModel) {
-                            EpisodeView(episode = it)
-                        }
-                    }
+                    composable("characters_screen") { CharactersScreen() }
+                    composable("locations_screen") { LocationsScreen() }
+                    composable("episodes_screen") { EpisodesScreen() }
                 }
             }
         }
