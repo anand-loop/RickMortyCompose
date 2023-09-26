@@ -15,8 +15,8 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import coil.compose.AsyncImage
 import com.anandj.rickmorty.R
-import com.anandj.rickmorty.model.Character
-import com.anandj.rickmorty.model.Status
+import com.anandj.rickmorty.data.Character
+import com.anandj.rickmorty.data.Status
 import com.anandj.rickmorty.ui.theme.Dimen
 
 @Composable

@@ -1,4 +1,4 @@
-package com.anandj.rickmorty.model
+package com.anandj.rickmorty.data
 
 import com.squareup.moshi.Json
 
@@ -20,14 +20,14 @@ data class Episode(
     val episode: String
 )
 
-data class PageInfo(
+data class PaginationInfo(
     val count: Int,
     val pages: Int,
     val next: String,
     val prev: String
 )
 
-data class PagedResult<T>(
-    val info: PageInfo,
+data class PaginatedResult<T>(
+    val info: PaginationInfo,
     val results: List<T>
 )

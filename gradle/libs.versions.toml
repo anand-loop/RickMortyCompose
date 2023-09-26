@@ -13,6 +13,7 @@ lifecycle = "2.3.1"
 material3 = "1.1.1"
 nav = "2.5.1"
 navigation = "2.5.1"
+paging = "3.2.1"
 retrofit = "2.9.0"
 showkase = "1.0.0-beta18"
 
@@ -36,6 +37,9 @@ androidx-constraintlayout-compose = { group = "androidx.constraintlayout", name 
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core" }
 androidx-lifecycle-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
 androidx-nav-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
+
+androidx-paging = { group = "androidx.paging", name = "paging-runtime", version.ref = "paging" }
+androidx-paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "paging" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test" }

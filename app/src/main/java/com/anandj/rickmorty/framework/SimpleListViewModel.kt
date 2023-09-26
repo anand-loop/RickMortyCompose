@@ -1,6 +1,6 @@
 package com.anandj.rickmorty.framework
 
-import com.anandj.rickmorty.model.PagedResult
+import com.anandj.rickmorty.data.PaginatedResult
 
 abstract class ListViewModel<T : Any> : BaseViewModel<ListViewState, ListViewAction>(
     ListViewState.Loading
@@ -23,7 +23,7 @@ abstract class ListViewModel<T : Any> : BaseViewModel<ListViewState, ListViewAct
         }
     }
 
-    protected abstract suspend fun fetchData(): Result<PagedResult<T>>
+    protected abstract suspend fun fetchData(): Result<PaginatedResult<T>>
 }
 
 sealed class ListViewAction {
