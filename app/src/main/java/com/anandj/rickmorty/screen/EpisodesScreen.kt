@@ -18,21 +18,21 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemContentType
 import androidx.paging.compose.itemKey
-import com.anandj.rickmorty.data.Character
+import com.anandj.rickmorty.data.Episode
 import com.anandj.rickmorty.theme.Dimen.ContentPadding
-import com.anandj.rickmorty.ui.CharacterView
+import com.anandj.rickmorty.ui.EpisodeView
 
 @Composable
-fun CharactersScreen() {
-    val viewModel: CharactersViewModel = viewModel()
-    val characters: LazyPagingItems<Character> = viewModel.pager.collectAsLazyPagingItems()
+fun EpisodesScreen() {
+    val viewModel: EpisodesViewModel = viewModel()
+    val episodes: LazyPagingItems<Episode> = viewModel.pager.collectAsLazyPagingItems()
 
     Box(
         modifier = Modifier
             .fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        when (characters.loadState.refresh) {
+        when (episodes.loadState.refresh) {
             is LoadState.Loading -> {
                 CircularProgressIndicator()
             }
@@ -44,16 +44,16 @@ fun CharactersScreen() {
             else -> {
                 LazyColumn {
                     items(
-                        count = characters.itemCount,
-                        key = characters.itemKey { it.id },
-                        contentType = characters.itemContentType { "characterType" }
+                        count = episodes.itemCount,
+                        key = episodes.itemKey { it.id },
+                        contentType = episodes.itemContentType { "characterType" }
                     ) { index ->
-                        characters[index]?.let {
-                            CharacterView(character = it)
+                        episodes[index]?.let {
+                            EpisodeView(episode = it)
                         }
                     }
 
-                    when (characters.loadState.append) {
+                    when (episodes.loadState.append) {
                         is LoadState.Error -> {}
                         LoadState.Loading -> {
                             item {

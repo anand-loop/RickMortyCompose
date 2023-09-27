@@ -12,8 +12,8 @@ internal interface RickMortyApi {
     suspend fun getCharacters(@Query("page") page: Int): PaginatedResult<Character>
 
     @GET("location")
-    suspend fun getLocations(): PaginatedResult<Location>
+    suspend fun getLocations(@Query("page") page: Int): PaginatedResult<Location>
 
     @GET("episode")
-    suspend fun getEpisode(): PaginatedResult<Episode>
+    suspend fun getEpisode(@Query("page") page: Int): PaginatedResult<Episode>
 }

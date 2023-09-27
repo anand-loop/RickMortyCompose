@@ -18,21 +18,21 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemContentType
 import androidx.paging.compose.itemKey
-import com.anandj.rickmorty.data.Character
+import com.anandj.rickmorty.data.Location
 import com.anandj.rickmorty.theme.Dimen.ContentPadding
-import com.anandj.rickmorty.ui.CharacterView
+import com.anandj.rickmorty.ui.LocationView
 
 @Composable
-fun CharactersScreen() {
-    val viewModel: CharactersViewModel = viewModel()
-    val characters: LazyPagingItems<Character> = viewModel.pager.collectAsLazyPagingItems()
+fun LocationsScreen() {
+    val viewModel: LocationsViewModel = viewModel()
+    val locations: LazyPagingItems<Location> = viewModel.pager.collectAsLazyPagingItems()
 
     Box(
         modifier = Modifier
             .fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        when (characters.loadState.refresh) {
+        when (locations.loadState.refresh) {
             is LoadState.Loading -> {
                 CircularProgressIndicator()
             }
@@ -44,16 +44,16 @@ fun CharactersScreen() {
             else -> {
                 LazyColumn {
                     items(
-                        count = characters.itemCount,
-                        key = characters.itemKey { it.id },
-                        contentType = characters.itemContentType { "characterType" }
+                        count = locations.itemCount,
+                        key = locations.itemKey { it.id },
+                        contentType = locations.itemContentType { "characterType" }
                     ) { index ->
-                        characters[index]?.let {
-                            CharacterView(character = it)
+                        locations[index]?.let {
+                            LocationView(location = it)
                         }
                     }
 
-                    when (characters.loadState.append) {
+                    when (locations.loadState.append) {
                         is LoadState.Error -> {}
                         LoadState.Loading -> {
                             item {

@@ -32,6 +32,6 @@ fun EpisodeView(episode: Episode, modifier: Modifier = Modifier) {
 @Composable
 fun EpisodeViewPreview() {
     LocationView(
-        location = Location(name = "Earth", type = "Planet", dimension = "C-137")
+        location = Location(id = 1, name = "Earth", type = "Planet", dimension = "C-137")
     )
 }

@@ -6,7 +6,7 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingSource
 
 abstract class PagingViewModel<Key : Any, Value : Any, PagerSourceT : PagingSource<Key, Value>> constructor(
-    pagingSourceFactory: () -> PagerSourceT,
+    pagingSourceFactory: () -> PagerSourceT
 ) : ViewModel() {
     companion object {
         private const val PAGE_SIZE = 10

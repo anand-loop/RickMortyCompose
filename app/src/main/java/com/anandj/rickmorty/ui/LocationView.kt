@@ -31,6 +31,6 @@ fun LocationView(location: Location, modifier: Modifier = Modifier) {
 @Composable
 fun LocationViewPreview() {
     LocationView(
-        location = Location(name = "Earth", type = "Planet", dimension = "C-137")
+        location = Location(id = 1, name = "Earth", type = "Planet", dimension = "C-137")
     )
 }

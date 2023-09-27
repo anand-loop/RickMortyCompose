@@ -3,6 +3,8 @@ package com.anandj.rickmorty.data
 import com.squareup.moshi.Json
 
 data class Location(
+    @field:Json(name = "id")
+    val id: Int,
     @field:Json(name = "name")
     val name: String,
     @field:Json(name = "type")
@@ -12,6 +14,8 @@ data class Location(
 )
 
 data class Episode(
+    @field:Json(name = "id")
+    val id: Int,
     @field:Json(name = "name")
     val name: String,
     @field:Json(name = "air_date")

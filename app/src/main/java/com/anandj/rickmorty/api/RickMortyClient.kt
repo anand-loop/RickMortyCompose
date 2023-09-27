@@ -37,17 +37,17 @@ class RickMortyClient {
         }
     }
 
-    suspend fun getLocations(): Result<PaginatedResult<Location>> {
+    suspend fun getLocations(page: Int = 1): Result<PaginatedResult<Location>> {
         return try {
-            Result.success(api.getLocations())
+            Result.success(api.getLocations(page = page))
         } catch (e: Exception) {
             Result.failure(e)
         }
     }
 
-    suspend fun getEpisodes(): Result<PaginatedResult<Episode>> {
+    suspend fun getEpisodes(page: Int = 1): Result<PaginatedResult<Episode>> {
         return try {
-            Result.success(api.getEpisode())
+            Result.success(api.getEpisode(page = page))
         } catch (e: Exception) {
             Result.failure(e)
         }

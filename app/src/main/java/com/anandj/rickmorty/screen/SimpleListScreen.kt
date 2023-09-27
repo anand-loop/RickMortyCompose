@@ -14,16 +14,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.anandj.rickmorty.data.Character
 import com.anandj.rickmorty.framework.ListViewModel
 import com.anandj.rickmorty.framework.ListViewState
-import com.anandj.rickmorty.data.Character
 import com.anandj.rickmorty.ui.CharacterView
 
 @Composable
 fun <T> SimpleStatefulList(
     viewModel: ListViewModel<*>,
     modifier: Modifier = Modifier,
-    itemContent: @Composable (T) -> Unit,
+    itemContent: @Composable (T) -> Unit
 ) {
     val state = viewModel.state.collectAsState()
     Box(
@@ -53,7 +53,7 @@ fun <T> SimpleStatefulList(
 inline fun <reified T> SimpleList(
     data: List<T>,
     modifier: Modifier = Modifier,
-    crossinline itemContent: @Composable (T) -> Unit,
+    crossinline itemContent: @Composable (T) -> Unit
 ) {
     LazyColumn(
         modifier = modifier,
