@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
@@ -21,10 +22,11 @@ import androidx.paging.compose.itemKey
 import com.anandj.rickmorty.data.Episode
 import com.anandj.rickmorty.theme.Dimen.ContentPadding
 import com.anandj.rickmorty.ui.EpisodeView
+import com.anandj.rickmorty.viewmodel.EpisodesViewModel
 
 @Composable
 fun EpisodesScreen() {
-    val viewModel: EpisodesViewModel = viewModel()
+    val viewModel: EpisodesViewModel = hiltViewModel()
     val episodes: LazyPagingItems<Episode> = viewModel.pager.collectAsLazyPagingItems()
 
     Box(

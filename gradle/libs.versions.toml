@@ -6,6 +6,8 @@ coil  = "2.4.0"
 compose = "1.4.3"
 constraintlayout = "1.1.0-alpha01"
 core = "1.7.0"
+hilt = "2.44"
+hilt-nav-compose = "1.0.0"
 junit = "4.13.2"
 kotlin-compose = "1.4.3"
 kotlin-coroutines = "1.3.9"
@@ -37,6 +39,7 @@ androidx-constraintlayout-compose = { group = "androidx.constraintlayout", name 
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core" }
 androidx-lifecycle-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
 androidx-nav-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
+androidx-hilt-nav-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt-nav-compose" }
 
 androidx-paging = { group = "androidx.paging", name = "paging-runtime", version.ref = "paging" }
 androidx-paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "paging" }
@@ -44,6 +47,9 @@ androidx-paging-compose = { group = "androidx.paging", name = "paging-compose", 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test" }
 androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidx-test-espresso" }
+
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 
 coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 kotlin-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlin-coroutines" }
@@ -55,6 +61,8 @@ showkase-ksp = { group = "com.airbnb.android", name = "showkase-processor", vers
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidPlugin" }
 android-library = { id = "com.android.library", version.ref = "androidPlugin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinPlugin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlinPlugin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "kspPlugin" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotlessPlugin" }

@@ -1,6 +1,8 @@
 plugins {
     alias libs.plugins.android.application
     alias libs.plugins.kotlin
+    alias libs.plugins.kotlin.kapt
+    alias libs.plugins.hilt
     alias libs.plugins.spotless
     alias libs.plugins.ksp
 }
@@ -43,6 +45,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    kapt {
+        correctErrorTypes true
+    }
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -60,8 +65,6 @@ android {
 }
 
 dependencies {
-
-
     implementation libs.kotlin.coroutines
 
     // Retrofit
@@ -87,10 +90,14 @@ dependencies {
     implementation libs.androidx.nav.compose
     implementation libs.androidx.paging
     implementation libs.androidx.paging.compose
+    implementation libs.androidx.hilt.nav.compose
+
+    // Hilt
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
 
     // Other
     implementation libs.coil
-
 
     implementation libs.showkase
     ksp libs.showkase.ksp

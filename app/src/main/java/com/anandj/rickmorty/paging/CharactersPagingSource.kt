@@ -5,8 +5,9 @@ import androidx.paging.PagingState
 import com.anandj.rickmorty.api.RickMortyClient
 import com.anandj.rickmorty.data.Character
 import java.io.IOException
+import javax.inject.Inject
 
-class CharactersPagingSource constructor(
+class CharactersPagingSource @Inject constructor(
     private val client: RickMortyClient
 ) : PagingSource<Int, Character>() {
 

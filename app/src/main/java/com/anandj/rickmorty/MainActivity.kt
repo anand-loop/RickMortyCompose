@@ -27,7 +27,9 @@ import com.anandj.rickmorty.theme.AppTheme
 import com.anandj.rickmorty.ui.BottomNavBar
 import com.anandj.rickmorty.ui.DebugDrawer
 import com.anandj.rickmorty.ui.NavigationItem
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private val navItems = listOf(
         NavigationItem(title = R.string.screen_title_characters, icon = R.drawable.ic_person, "characters_screen"),

@@ -8,16 +8,11 @@ import com.anandj.rickmorty.data.StatusAdapter
 import com.squareup.moshi.Moshi
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class RickMortyClient {
-
-    companion object {
-        private val INSTANCE = RickMortyClient()
-
-        fun getInstance() = INSTANCE
-    }
-
-    private constructor()
+@Singleton
+class RickMortyClient @Inject constructor() {
 
     private val moshi = Moshi.Builder()
         .add(StatusAdapter())
