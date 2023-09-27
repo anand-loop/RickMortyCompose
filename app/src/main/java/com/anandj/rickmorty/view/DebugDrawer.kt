@@ -1,4 +1,4 @@
-package com.anandj.rickmorty.ui
+package com.anandj.rickmorty.view
 
 import android.app.Activity
 import android.content.Context

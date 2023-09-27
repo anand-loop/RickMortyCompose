@@ -1,4 +1,4 @@
-package com.anandj.rickmorty.ui
+package com.anandj.rickmorty.view
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -9,8 +9,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.anandj.rickmorty.data.Episode
-import com.anandj.rickmorty.data.Location
+import com.anandj.rickmorty.network.data.Episode
+import com.anandj.rickmorty.network.data.Location
 import com.anandj.rickmorty.theme.Dimen
 
 @Composable

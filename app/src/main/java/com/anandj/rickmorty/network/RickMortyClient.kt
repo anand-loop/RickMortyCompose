@@ -1,28 +1,16 @@
-package com.anandj.rickmorty.api
+package com.anandj.rickmorty.network
 
-import com.anandj.rickmorty.data.Character
-import com.anandj.rickmorty.data.Episode
-import com.anandj.rickmorty.data.Location
-import com.anandj.rickmorty.data.PaginatedResult
-import com.anandj.rickmorty.data.StatusAdapter
-import com.squareup.moshi.Moshi
-import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
+import com.anandj.rickmorty.network.data.Character
+import com.anandj.rickmorty.network.data.Episode
+import com.anandj.rickmorty.network.data.Location
+import com.anandj.rickmorty.network.data.PaginatedResult
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class RickMortyClient @Inject constructor() {
-
-    private val moshi = Moshi.Builder()
-        .add(StatusAdapter())
-        .build()
-
-    private val api = Retrofit.Builder()
-        .baseUrl("https://rickandmortyapi.com/api/")
-        .addConverterFactory(MoshiConverterFactory.create(moshi))
-        .build()
-        .create(RickMortyApi::class.java)
+class RickMortyClient @Inject constructor(
+    private val api: RickMortyApi
+) {
 
     suspend fun getCharacters(page: Int = 1): Result<PaginatedResult<Character>> {
         return try {

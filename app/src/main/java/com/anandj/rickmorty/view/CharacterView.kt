@@ -1,4 +1,4 @@
-package com.anandj.rickmorty.ui
+package com.anandj.rickmorty.view
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
@@ -15,8 +15,8 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import coil.compose.AsyncImage
 import com.anandj.rickmorty.R
-import com.anandj.rickmorty.data.Character
-import com.anandj.rickmorty.data.Status
+import com.anandj.rickmorty.network.data.Character
+import com.anandj.rickmorty.network.data.Status
 import com.anandj.rickmorty.theme.Dimen
 
 @Composable

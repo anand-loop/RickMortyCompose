@@ -2,8 +2,8 @@ package com.anandj.rickmorty.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.anandj.rickmorty.api.RickMortyClient
-import com.anandj.rickmorty.data.Character
+import com.anandj.rickmorty.network.RickMortyClient
+import com.anandj.rickmorty.network.data.Character
 import java.io.IOException
 import javax.inject.Inject
 

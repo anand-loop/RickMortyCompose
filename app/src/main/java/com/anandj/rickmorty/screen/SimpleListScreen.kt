@@ -14,10 +14,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.anandj.rickmorty.data.Character
 import com.anandj.rickmorty.framework.ListViewModel
 import com.anandj.rickmorty.framework.ListViewState
-import com.anandj.rickmorty.ui.CharacterView
+import com.anandj.rickmorty.network.data.Character
+import com.anandj.rickmorty.view.CharacterView
 
 @Composable
 fun <T> SimpleStatefulList(

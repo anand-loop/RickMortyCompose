@@ -1,6 +1,6 @@
 package com.anandj.rickmorty.framework
 
-import com.anandj.rickmorty.data.PaginatedResult
+import com.anandj.rickmorty.network.data.PaginatedResult
 
 abstract class ListViewModel<T : Any> : BaseViewModel<ListViewState, ListViewAction>(
     ListViewState.Loading

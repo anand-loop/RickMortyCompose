@@ -1,4 +1,4 @@
-package com.anandj.rickmorty.data
+package com.anandj.rickmorty.network.data
 
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.Json

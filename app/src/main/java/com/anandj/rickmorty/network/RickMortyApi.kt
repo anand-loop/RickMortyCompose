@@ -1,13 +1,13 @@
-package com.anandj.rickmorty.api
+package com.anandj.rickmorty.network
 
-import com.anandj.rickmorty.data.Character
-import com.anandj.rickmorty.data.Episode
-import com.anandj.rickmorty.data.Location
-import com.anandj.rickmorty.data.PaginatedResult
+import com.anandj.rickmorty.network.data.Character
+import com.anandj.rickmorty.network.data.Episode
+import com.anandj.rickmorty.network.data.Location
+import com.anandj.rickmorty.network.data.PaginatedResult
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-internal interface RickMortyApi {
+interface RickMortyApi {
     @GET("character")
     suspend fun getCharacters(@Query("page") page: Int): PaginatedResult<Character>
 
