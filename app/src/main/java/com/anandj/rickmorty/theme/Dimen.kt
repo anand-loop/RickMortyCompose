@@ -1,4 +1,4 @@
-package com.anandj.rickmorty.ui.theme
+package com.anandj.rickmorty.theme
 
 import androidx.compose.ui.unit.dp
 

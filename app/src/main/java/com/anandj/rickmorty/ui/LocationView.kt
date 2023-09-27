@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.anandj.rickmorty.data.Location
-import com.anandj.rickmorty.ui.theme.Dimen
+import com.anandj.rickmorty.theme.Dimen
 
 @Composable
 fun LocationView(location: Location, modifier: Modifier = Modifier) {

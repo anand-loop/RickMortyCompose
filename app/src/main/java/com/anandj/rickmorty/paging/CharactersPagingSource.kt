@@ -23,6 +23,6 @@ class CharactersPagingSource constructor(private val client: RickMortyClient) : 
     }
 
     override fun getRefreshKey(state: PagingState<Int, Character>): Int? {
-        return state.anchorPosition
+        return ((state.anchorPosition ?: 0) - state.config.initialLoadSize / 2).coerceAtLeast(0)
     }
 }

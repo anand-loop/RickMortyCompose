@@ -17,7 +17,7 @@ import coil.compose.AsyncImage
 import com.anandj.rickmorty.R
 import com.anandj.rickmorty.data.Character
 import com.anandj.rickmorty.data.Status
-import com.anandj.rickmorty.ui.theme.Dimen
+import com.anandj.rickmorty.theme.Dimen
 
 @Composable
 fun CharacterView(character: Character, modifier: Modifier = Modifier) {

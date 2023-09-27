@@ -11,23 +11,9 @@ import com.anandj.rickmorty.paging.CharactersPagingSource
 
 private val client: RickMortyClient = RickMortyClient.getInstance()
 
-class CharactersViewModel : PagingViewModel<Character, CharactersPagingSource, CharactersViewModel.CharactersViewState, CharactersViewModel.CharactersViewActions>(
-    CharactersViewState.Default,
+class CharactersViewModel : PagingViewModel<Int, Character, CharactersPagingSource>(
     { CharactersPagingSource(client) }
-) {
-
-    sealed class CharactersViewState {
-        object Default : CharactersViewState()
-    }
-
-    sealed class CharactersViewActions {
-        object Nothing : CharactersViewState()
-    }
-
-    override suspend fun onAction(action: CharactersViewActions) {
-        TODO("Not yet implemented")
-    }
-}
+)
 
 class LocationsViewModel : ListViewModel<Location>() {
     override suspend fun fetchData(): Result<PaginatedResult<Location>> {
