@@ -1,4 +1,4 @@
-package com.anandj.rickmorty.screen
+package com.anandj.rickmorty.screen.characters
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -19,9 +19,8 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemContentType
 import androidx.paging.compose.itemKey
 import com.anandj.rickmorty.network.data.Character
-import com.anandj.rickmorty.theme.Dimen.ContentPadding
-import com.anandj.rickmorty.view.CharacterView
-import com.anandj.rickmorty.viewmodel.CharactersViewModel
+import com.anandj.rickmorty.ui.theme.Dimen.ContentPadding
+import com.anandj.rickmorty.ui.CharacterView
 
 @Composable
 fun CharactersScreen(viewModel: CharactersViewModel = hiltViewModel()) {

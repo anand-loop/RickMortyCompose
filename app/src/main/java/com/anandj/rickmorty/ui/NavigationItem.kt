@@ -1,4 +1,4 @@
-package com.anandj.rickmorty.view
+package com.anandj.rickmorty.ui
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes

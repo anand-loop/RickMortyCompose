@@ -1,4 +1,4 @@
-package com.anandj.rickmorty.screen
+package com.anandj.rickmorty.screen.locations
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -18,21 +18,20 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemContentType
 import androidx.paging.compose.itemKey
-import com.anandj.rickmorty.network.data.Episode
-import com.anandj.rickmorty.theme.Dimen.ContentPadding
-import com.anandj.rickmorty.view.EpisodeView
-import com.anandj.rickmorty.viewmodel.EpisodesViewModel
+import com.anandj.rickmorty.network.data.Location
+import com.anandj.rickmorty.ui.theme.Dimen.ContentPadding
+import com.anandj.rickmorty.ui.LocationView
 
 @Composable
-fun EpisodesScreen(viewModel: EpisodesViewModel = hiltViewModel()) {
-    val episodes: LazyPagingItems<Episode> = viewModel.pager.collectAsLazyPagingItems()
+fun LocationsScreen(viewModel: LocationsViewModel = hiltViewModel()) {
+    val locations: LazyPagingItems<Location> = viewModel.pager.collectAsLazyPagingItems()
 
     Box(
         modifier = Modifier
             .fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        when (episodes.loadState.refresh) {
+        when (locations.loadState.refresh) {
             is LoadState.Loading -> {
                 CircularProgressIndicator()
             }
@@ -44,16 +43,16 @@ fun EpisodesScreen(viewModel: EpisodesViewModel = hiltViewModel()) {
             else -> {
                 LazyColumn {
                     items(
-                        count = episodes.itemCount,
-                        key = episodes.itemKey { it.id },
-                        contentType = episodes.itemContentType { "characterType" }
+                        count = locations.itemCount,
+                        key = locations.itemKey { it.id },
+                        contentType = locations.itemContentType { "characterType" }
                     ) { index ->
-                        episodes[index]?.let {
-                            EpisodeView(episode = it)
+                        locations[index]?.let {
+                            LocationView(location = it)
                         }
                     }
 
-                    when (episodes.loadState.append) {
+                    when (locations.loadState.append) {
                         is LoadState.Error -> {}
                         LoadState.Loading -> {
                             item {

@@ -4,16 +4,18 @@ import com.anandj.rickmorty.network.data.Character
 import com.anandj.rickmorty.network.data.Episode
 import com.anandj.rickmorty.network.data.Location
 import com.anandj.rickmorty.network.data.PaginatedResult
+import kotlinx.coroutines.delay
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class RickMortyClient @Inject constructor(
-    private val api: RickMortyApi
+    private val api: RickMortyApi,
 ) {
 
     suspend fun getCharacters(page: Int = 1): Result<PaginatedResult<Character>> {
         return try {
+            delay(3000L)
             Result.success(api.getCharacters(page = page))
         } catch (e: Exception) {
             Result.failure(e)

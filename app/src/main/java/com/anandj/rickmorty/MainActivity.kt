@@ -20,13 +20,13 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.anandj.rickmorty.screen.CharactersScreen
-import com.anandj.rickmorty.screen.EpisodesScreen
-import com.anandj.rickmorty.screen.LocationsScreen
-import com.anandj.rickmorty.theme.AppTheme
-import com.anandj.rickmorty.view.BottomNavBar
-import com.anandj.rickmorty.view.DebugDrawer
-import com.anandj.rickmorty.view.NavigationItem
+import com.anandj.rickmorty.screen.characters.CharactersScreen
+import com.anandj.rickmorty.screen.episodes.EpisodesScreen
+import com.anandj.rickmorty.screen.locations.LocationsScreen
+import com.anandj.rickmorty.ui.theme.AppTheme
+import com.anandj.rickmorty.ui.BottomNavBar
+import com.anandj.rickmorty.ui.DebugDrawer
+import com.anandj.rickmorty.ui.NavigationItem
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -71,12 +71,12 @@ fun RickMortyApp(navController: NavHostController, navItems: List<NavigationItem
             ) { padding ->
                 NavHost(
                     navController = navController,
-                    startDestination = "characters_screen",
+                    startDestination = "characters",
                     modifier = Modifier.padding(padding)
                 ) {
-                    composable("characters_screen") { CharactersScreen() }
-                    composable("locations_screen") { LocationsScreen() }
-                    composable("episodes_screen") { EpisodesScreen() }
+                    composable("characters") { CharactersScreen() }
+                    composable("locations") { LocationsScreen() }
+                    composable("episodes") { EpisodesScreen() }
                 }
             }
         }

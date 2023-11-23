@@ -1,4 +1,4 @@
-package com.anandj.rickmorty.view
+package com.anandj.rickmorty.ui
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
@@ -17,7 +17,7 @@ import coil.compose.AsyncImage
 import com.anandj.rickmorty.R
 import com.anandj.rickmorty.network.data.Character
 import com.anandj.rickmorty.network.data.Status
-import com.anandj.rickmorty.theme.Dimen
+import com.anandj.rickmorty.ui.theme.Dimen
 
 @Composable
 fun CharacterView(character: Character, modifier: Modifier = Modifier) {

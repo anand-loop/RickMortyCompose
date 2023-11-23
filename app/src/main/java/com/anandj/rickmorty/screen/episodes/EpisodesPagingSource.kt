@@ -1,4 +1,4 @@
-package com.anandj.rickmorty.paging
+package com.anandj.rickmorty.screen.episodes
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState

@@ -1,4 +1,4 @@
-package com.anandj.rickmorty.view
+package com.anandj.rickmorty.ui
 
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
