@@ -14,7 +14,7 @@ class CharactersPagingSource @Inject constructor(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Character> {
         return try {
             val page = params.key ?: 1
-            val result = client.getCharacters(page).getOrThrow()
+            val result = client.getCharacters(page, "Rick").getOrThrow()
 
             val prevKey = if (page > 0) page - 1 else null
             val nextKey = if (result.info.next != null) page + 1 else null

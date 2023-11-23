@@ -14,14 +14,15 @@ data class Character(
     @field:Json(name = "species")
     val species: String = "",
     @field:Json(name = "image")
-    val image: String = ""
+    val image: String = "",
 )
 
 enum class Status(val status: String) {
     UNSPECIFIED("Unspecified"),
     UNKNOWN("Unknown"),
     ALIVE("Alive"),
-    DEAD("Dead");
+    DEAD("Dead"),
+    ;
 
     companion object {
         fun fromString(status: String) = values().associateBy(Status::status)[status] ?: UNSPECIFIED

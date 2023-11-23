@@ -18,6 +18,7 @@ navigation = "2.5.1"
 paging = "3.2.1"
 retrofit = "2.9.0"
 showkase = "1.0.0-beta18"
+timber = "5.0.1"
 
 androidPlugin = "7.4.1"
 kotlinPlugin = "1.6.21"
@@ -57,6 +58,7 @@ retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = 
 retrofit-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
 showkase = { group = "com.airbnb.android", name = "showkase", version.ref = "showkase" }
 showkase-ksp = { group = "com.airbnb.android", name = "showkase-processor", version.ref = "showkase" }
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidPlugin" }

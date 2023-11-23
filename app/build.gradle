@@ -98,7 +98,7 @@ dependencies {
 
     // Other
     implementation libs.coil
-
+    implementation libs.timber
     implementation libs.showkase
     ksp libs.showkase.ksp
 

@@ -23,10 +23,10 @@ import androidx.navigation.compose.rememberNavController
 import com.anandj.rickmorty.screen.characters.CharactersScreen
 import com.anandj.rickmorty.screen.episodes.EpisodesScreen
 import com.anandj.rickmorty.screen.locations.LocationsScreen
-import com.anandj.rickmorty.ui.theme.AppTheme
 import com.anandj.rickmorty.ui.BottomNavBar
 import com.anandj.rickmorty.ui.DebugDrawer
 import com.anandj.rickmorty.ui.NavigationItem
+import com.anandj.rickmorty.ui.theme.AppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
